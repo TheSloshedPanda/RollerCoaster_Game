@@ -3,6 +3,8 @@ import { InputHandler } from './input.js';
 import { Background } from './background.js';
 import { FlyingEnemy, ClimbingEnemy, GroundEnemy } from './enemies.js';
 import { UI } from './UI.js';
+import { groundMargin } from './groundMargin.js';
+
 
 window.addEventListener('load', function(){
     const canvas = document.getElementById('canvas1');
@@ -15,7 +17,7 @@ window.addEventListener('load', function(){
             this.width = width;
             this.height = height;
             //this.groundMargin = 80;
-            this.groundMargin = 80;
+            this.groundMargin = new GroundMargin(this);
             this.speed = 0;
             this.maxSpeed = 3;
             this.background = new Background(this);
